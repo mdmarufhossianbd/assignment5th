@@ -5,10 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buy Bus Ticket</title>
+    <!-- Tailwind and Daisy -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
 
-<body>
-
+<body class="mx-36 mt-10">
+    <!-- navbar section -->
+    <section>
+        <div class="flex items-center justify-between">
+            <div>
+                <h2 class="font-extrabold text-5xl">P-Ticket</h2>
+            </div>
+            <div>
+                <ul class="flex gap-12 font-medium text-lg">
+                    <li><a>Home</a></li>
+                    <li><a>About</a></li>
+                    <li><a>Destination</a></li>
+                    <li><a>Search</a></li>
+                </ul>
+            </div>
+            <div>
+                <button
+                    class="flex items-center gap-2 bg-[#1dd1001a] text-xl font-semibold text-[#1dd100] px-10 py-4 rounded-md">Bus<img
+                        src="images/bus-icon.png"></button>
+            </div>
+        </div>
+    </section>
 
     <script src="script.js"></script>
 </body>
