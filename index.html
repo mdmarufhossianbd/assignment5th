@@ -186,20 +186,22 @@
             </div>
         </div>
         <!-- seat section -->
-        <div class="mx-36 bg-white mt-7">
-            <h3>Select Your Seat</h3>
-            <div class="flex justify-between">
-                <div class="flex">
-                    <img src="images/seat-gray.png">
-                    <p>Available</p>
-                </div>
-                <div class="flex">
-                    <img src="images/seat-green-filled.png">
-                    <p>Selected</p>
-                </div>
-            </div>
+        <div class="mx-36 bg-white mt-7 p-8 rounded-3xl">
             <div class="flex">
                 <div class="grid grid-cols-5 gap-10 pl-4 w-[60%] pr-8">
+                    <div class="col-span-5">
+                        <h3 class="font-semibold text-2xl mb-6">Select Your Seat</h3>
+                        <div class="flex justify-between py-5 border-dashed border-y-2 border-[#03071233]">
+                            <div class="flex font-medium text-lg text-[#03071280]">
+                                <img src="images/seat-gray.png">
+                                <p>Available</p>
+                            </div>
+                            <div class="flex">
+                                <img src="images/seat-green-filled.png">
+                                <p class="text-[#1dd100] font-medium text-lg">Selected</p>
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-end-6 rounded-lg bg-[#f7f8f8] py-4 px-8"><img src="images/stearing.png">
                     </div>
                     <p class="py-4 pl-6">A</p>
@@ -253,40 +255,45 @@
                     <button class="rounded-lg bg-[#f7f8f8] py-4 px-8">J3</button>
                     <button class="rounded-lg bg-[#f7f8f8] py-4 px-8">J4</button>
                 </div>
-                <div class="w-[45%] border-dashed border-l-4 border-[#0307124d] px-8">
-                    <h3>Select Your Seat</h3>
-                    <div class="bg-[#f7f8f8] p-8 my-6 rounded-xl w-full">
+                <div class="w-[50%] border-dashed border-l-4 border-[#0307124d] px-8">
+                    <h3 class="font-semibold text-2xl pb-6 border-dashed border-b-2 border-[#03071233]">Select Your Seat
+                    </h3>
+                    <div class="bg-[#f7f8f8] p-8 my-6 rounded-xl">
                         <table class="w-full">
                             <tr class="text-left">
                                 <th>
-                                    Seat<span>2</span>
+                                    Seat <span class="bg-[#1dd100] text-white px-2 rounded-xl">2</span>
                                 </th>
                                 <th>
                                     Class
                                 </th>
-                                <th>
+                                <th class="text-right">
                                     Price
                                 </th>
                             </tr>
                             <tr>
-                                <td>C2</td>
+                                <td class="py-2">C1</td>
                                 <td>Economoy</td>
-                                <td>550</td>
+                                <td class="text-right">550</td>
                             </tr>
                             <tr>
-                                <td>C2</td>
+                                <td class="py-2">C2</td>
                                 <td>Economoy</td>
-                                <td>550</td>
+                                <td class="text-right">550</td>
                             </tr>
                             <tr>
                                 <td class="font-medium">Total Price</td>
                                 <td></td>
-                                <td class="font-medium">1100</td>
+                                <td class="font-medium text-right">1100</td>
                             </tr>
                         </table>
-                        <div>
-                            <input type="text" placeholder="Have any copupon?" name="copupon" id="">
-                            <input type="submit" value="Apply">
+                        <div class="bg-white rounded-xl w-[90%] text-center my-3">
+                            <input class="p-6 w-[70%]" type="text" placeholder="Have any copupon?" name="copupon" id="">
+                            <input class="bg-[#1dd100] text-white py-3 px-5 rounded-lg" type="submit" value="Apply">
+                        </div>
+                        <div class="flex justify-between">
+                            <p class="font-medium">Grant Total</p>
+                            <p class="font-medium">1100</p>
                         </div>
                     </div>
                     <div class="w-full">
