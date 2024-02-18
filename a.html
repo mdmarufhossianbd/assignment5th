@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Ticket Booking System</title>
+</head>
+
+<body>
+    <p id="totalSeats" class="py-4 pl-6">Available Seats: 40</p>
+    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8" data-seat="CA">CA</button>
+    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8" data-seat="C2">C2</button>
+    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8" data-seat="C3">C3</button>
+    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8" data-seat="C4">C4</button>
+    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8" data-seat="D1">D1</button>
+    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8" data-seat="D2">D2</button>
+    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8" data-seat="D3">D3</button>
+    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8" data-seat="D4">D4</button>
+    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8" data-seat="E1">E1</button>
+    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8" data-seat="E2">E2</button>
+    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8" data-seat="E3">E3</button>
+    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8" data-seat="E4">E4</button>
+
+    <div class="w-[50%] border-dashed border-l-4 border-[#0307124d] px-8">
+        <h3 class="font-semibold text-2xl pb-6 border-dashed border-b-2 border-[#03071233]">Select Your Seat</h3>
+        <div class="bg-[#f7f8f8] p-8 my-6 rounded-xl">
+            <table id="seatTable" class="w-full">
+                <tr class="text-left">
+                    <th>Seat <span id="selectedSeats" class="bg-[#1dd100] text-white px-2 rounded-xl">0</span></th>
+                    <th>Class</th>
+                    <th class="text-right">Price</th>
+                </tr>
+                <tr>
+                    <td id="seat_in_invoice_1" class="py-2"></td>
+                    <td>Economy</td>
+                    <td class="text-right">550</td>
+                </tr>
+                <tr>
+                    <td id="seat_in_invoice_2" class="py-2"></td>
+                    <td>Economy</td>
+                    <td class="text-right">550</td>
+                </tr>
+                <tr>
+                    <td id="seat_in_invoice_3" class="py-2"></td>
+                    <td>Economy</td>
+                    <td class="text-right">550</td>
+                </tr>
+                <tr>
+                    <td id="seat_in_invoice_4" class="py-2"></td>
+                    <td>Economy</td>
+                    <td class="text-right">550</td>
+                </tr>
+                <tr>
+                    <td class="font-medium">Total Price</td>
+                    <td></td>
+                    <td id="totalPrice" class="font-medium text-right">1100</td>
+                </tr>
+            </table>
+            <div>
+                <p id="discount_price"></p>
+            </div>
+            <div id="couponSection" class="bg-white rounded-xl w-[90%] text-center my-3">
+                <input id="couponInput" class="p-6 w-[70%]" type="text" placeholder="Have any coupon?" name="coupon">
+                <button id="applyCoupon" class="bg-[#1dd100] text-white py-3 px-5 rounded-lg">Apply</button>
+            </div>
+            <div class="flex justify-between">
+                <p class="font-medium">Grand Total</p>
+                <p id="grandTotal" class="font-medium">0</p>
+            </div>
+        </div>
+    </div>
+    <div class="flex justify-center">
+        <button onclick="nextStep()" id="next" class="btn">Next</button>
+    </div>
+    <section id="confirmation" class="px-36 bg-[#f7f8f8] hidden">
+        <div class="flex flex-col items-center gap-8 p-40 bg-white rounded-3xl">
+            <img src="images/success.png">
+            <h4 class="text-[#27ae60] font-bold text-2xl">SUCCESS</h4>
+            <p class="text-[#4a4a4a] font-medium text-2xl text-center">Thank you for Booking Our Bus Seats.
+                We are working hard to find the best service and deals for you. <br>
+                <span class="font-normal">Shortly you will find a confirmation in your email.</span></p>
+            <button class="text-white bg-[#27ae60] font-bold py-5 px-16 rounded-full">Continue</button>
+        </div>
+    </section>
+
+    <script>
+        let selectedSeats = [];
+        const seatPrice = 550; // Price per seat
+        const applyCouponBtn = document.getElementById('applyCoupon');
+        const couponInput = document.getElementById('couponInput');
+        const selectedSeatsDisplay = document.getElementById('selectedSeats');
+        const totalPriceDisplay = document.getElementById('totalPrice');
+        const grandTotalDisplay = document.getElementById('grandTotal');
+        const discountPriceDisplay = document.getElementById('discount_price');
+        const couponSection = document.getElementById('couponSection');
+
+        // Event listener for applying coupon
+        applyCouponBtn.addEventListener('click', applyCoupon);
+
+        function applyCoupon() {
+            const couponCode = couponInput.value;
+            if (couponCode === 'NEW15' && selectedSeats.length === 4) {
+                // Apply coupon logic for NEW15 (15% discount)
+                const totalPrice = selectedSeats.length * seatPrice;
+                const discount = totalPrice * 0.15;
+                const finalPrice = totalPrice - discount;
+                grandTotalDisplay.textContent = finalPrice.toFixed(2);
+                discountPriceDisplay.textContent = `Discount: ${discount.toFixed(2)}`;
+                // Hide coupon input and button after applying coupon
+                couponSection.style.display = 'none';
+            } else if (couponCode === 'Couple 20' && selectedSeats.length === 4) {
+                // Apply coupon logic for Couple 20 (15% discount)
+                const totalPrice = selectedSeats.length * seatPrice;
+                const discount = totalPrice * 0.2;
+                const finalPrice = totalPrice - discount;
+                grandTotalDisplay.textContent = finalPrice.toFixed(2);
+                discountPriceDisplay.textContent = `Discount: ${discount.toFixed(2)}`;
+                // Hide coupon input and button after applying coupon
+                couponSection.style.display = 'none';
+            } else {
+                alert('Invalid coupon code or condition not met.');
+            }
+        }
+
+        function updateSeatSelection(seatName) {
+            if (selectedSeats.includes(seatName)) {
+                selectedSeats = selectedSeats.filter(seat => seat !== seatName);
+            } else {
+                if (selectedSeats.length < 4) {
+                    selectedSeats.push(seatName);
+                } else {
+                    alert('You can only select a maximum of 4 seats.');
+                }
+            }
+            updateSeatDisplay();
+            updateTotalPrice();
+        }
+
+        function updateSeatDisplay() {
+            selectedSeatsDisplay.textContent = selectedSeats.length;
+            selectedSeats.forEach((seat, index) => {
+                document.getElementById(`seat_in_invoice_${index + 1}`).textContent = seat;
+            });
+            // Clear remaining cells if fewer seats are selected
+            for (let i = selectedSeats.length + 1; i <= 4; i++) {
+                document.getElementById(`seat_in_invoice_${i}`).textContent = '';
+            }
+        }
+
+        function updateTotalPrice() {
+            totalPriceDisplay.textContent = (selectedSeats.length * seatPrice).toFixed(2);
+            grandTotalDisplay.textContent = (selectedSeats.length * seatPrice).toFixed(2);
+        }
+
+        // Example: Adding event listener to seat selection
+        const seats = document.querySelectorAll('.seat-button');
+        seats.forEach(seat => {
+            seat.addEventListener('click', () => {
+                const seatName = seat.dataset.seat;
+                updateSeatSelection(seatName);
+            });
+        });
+        let availableSeats = 40;
+        let numSeats = 0;
+        const buttons = document.getElementsByClassName('seat-button');
+        const totalSeats = document.getElementById('totalSeats');
+
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener('click', function (event) {
+                toggleSeat(event.target);
+            });
+        }
+
+        function toggleSeat(button) {
+            if (button.classList.contains('selected')) {
+                numSeats--;
+                availableSeats++;
+                button.classList.remove('selected');
+                button.style.backgroundColor = "#f7f8f8"; // Reset background color when deselected
+            } else {
+                if (numSeats < 4 && availableSeats > 0) {
+                    numSeats++;
+                    availableSeats--;
+                    button.classList.add('selected');
+                    button.style.backgroundColor = "#1dd100"; // Set background color when selected
+                }
+            }
+            totalSeats.textContent = `Seats left: ${availableSeats}`;
+        };
+
+        function nextStep() {
+            const confirmTiket = document.getElementById('confirmation');
+            confirmTiket.classList.remove('hidden');
+        }
+    </script>
+</body>
+
+</html>

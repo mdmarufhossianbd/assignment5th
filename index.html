@@ -158,7 +158,7 @@
                         </div>
                         <div class="flex items-center gap-1 p-4 bg-[#1dd10026] rounded-lg">
                             <img src="images/seat-green.png">
-                            <p class="text-[#1dd100]">40 Seats left</p>
+                            <p id="totalSeats" class="text-[#1dd100]">40 Seats left</p>
                         </div>
                     </div>
                     <div class="bg-[#f7f8f8] p-8 mt-6 rounded-xl">
@@ -207,55 +207,55 @@
                     <div class="col-end-6 rounded-lg bg-[#f7f8f8] py-4 px-8"><img src="images/stearing.png">
                     </div>
                     <p class="py-4 pl-6">A</p>
-                    <button onclick="set()" id="a1" class="rounded-lg bg-[#f7f8f8] py-4 px-8">A1</button>
-                    <button class="rounded-lg bg-[#f7f8f8] py-4 px-8">A2</button>
-                    <button class="rounded-lg bg-[#f7f8f8] py-4 px-8">A3</button>
-                    <button class="rounded-lg bg-[#f7f8f8] py-4 px-8">A4</button>
+                    <button onclick="set()" id="a1" class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">A1</button>
+                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">A2</button>
+                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">A3</button>
+                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">A4</button>
                     <p class="py-4 pl-6">B</p>
-                    <button class="rounded-lg bg-[#f7f8f8] py-4 px-8">B1</button>
-                    <button class="rounded-lg bg-[#f7f8f8] py-4 px-8">B2</button>
-                    <button class="rounded-lg bg-[#f7f8f8] py-4 px-8">B3</button>
-                    <button class="rounded-lg bg-[#f7f8f8] py-4 px-8">B4</button>
+                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">B1</button>
+                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">B2</button>
+                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">B3</button>
+                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">B4</button>
                     <p class="py-4 pl-6">C</p>
-                    <button class="rounded-lg bg-[#f7f8f8] py-4 px-8">CA</button>
-                    <button class="rounded-lg bg-[#f7f8f8] py-4 px-8">C2</button>
-                    <button class="rounded-lg bg-[#f7f8f8] py-4 px-8">C3</button>
-                    <button class="rounded-lg bg-[#f7f8f8] py-4 px-8">C4</button>
+                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">CA</button>
+                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">C2</button>
+                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">C3</button>
+                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">C4</button>
                     <p class="py-4 pl-6">D</p>
-                    <button class="rounded-lg bg-[#f7f8f8] py-4 px-8">D1</button>
-                    <button class="rounded-lg bg-[#f7f8f8] py-4 px-8">D2</button>
-                    <button class="rounded-lg bg-[#f7f8f8] py-4 px-8">D3</button>
-                    <button class="rounded-lg bg-[#f7f8f8] py-4 px-8">D4</button>
+                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">D1</button>
+                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">D2</button>
+                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">D3</button>
+                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">D4</button>
                     <p class="py-4 pl-6">E</p>
-                    <button class="rounded-lg bg-[#f7f8f8] py-4 px-8">E</button>
-                    <button class="rounded-lg bg-[#f7f8f8] py-4 px-8">E2</button>
-                    <button class="rounded-lg bg-[#f7f8f8] py-4 px-8">E3</button>
-                    <button class="rounded-lg bg-[#f7f8f8] py-4 px-8">E4</button>
+                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">E</button>
+                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">E2</button>
+                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">E3</button>
+                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">E4</button>
                     <p class="py-4 pl-6">F</p>
-                    <button class="rounded-lg bg-[#f7f8f8] py-4 px-8">F1</button>
-                    <button class="rounded-lg bg-[#f7f8f8] py-4 px-8">F2</button>
-                    <button class="rounded-lg bg-[#f7f8f8] py-4 px-8">F3</button>
-                    <button class="rounded-lg bg-[#f7f8f8] py-4 px-8">F4</button>
+                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">F1</button>
+                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">F2</button>
+                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">F3</button>
+                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">F4</button>
                     <p class="py-4 pl-6">G</p>
-                    <button class="rounded-lg bg-[#f7f8f8] py-4 px-8">G1</button>
-                    <button class="rounded-lg bg-[#f7f8f8] py-4 px-8">G2</button>
-                    <button class="rounded-lg bg-[#f7f8f8] py-4 px-8">G3</button>
-                    <button class="rounded-lg bg-[#f7f8f8] py-4 px-8">G4</button>
+                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">G1</button>
+                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">G2</button>
+                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">G3</button>
+                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">G4</button>
                     <p class="py-4 pl-6">H</p>
-                    <button class="rounded-lg bg-[#f7f8f8] py-4 px-8">H1</button>
-                    <button class="rounded-lg bg-[#f7f8f8] py-4 px-8">H2</button>
-                    <button class="rounded-lg bg-[#f7f8f8] py-4 px-8">H3</button>
-                    <button class="rounded-lg bg-[#f7f8f8] py-4 px-8">H4</button>
+                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">H1</button>
+                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">H2</button>
+                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">H3</button>
+                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">H4</button>
                     <p class="py-4 pl-6">I</p>
-                    <button class="rounded-lg bg-[#f7f8f8] py-4 px-8">I1</button>
-                    <button class="rounded-lg bg-[#f7f8f8] py-4 px-8">I2</button>
-                    <button class="rounded-lg bg-[#f7f8f8] py-4 px-8">I3</button>
-                    <button class="rounded-lg bg-[#f7f8f8] py-4 px-8">I4</button>
+                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">I1</button>
+                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">I2</button>
+                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">I3</button>
+                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">I4</button>
                     <p class="py-4 pl-6">J</p>
-                    <button class="rounded-lg bg-[#f7f8f8] py-4 px-8">J1</button>
-                    <button class="rounded-lg bg-[#f7f8f8] py-4 px-8">J2</button>
-                    <button class="rounded-lg bg-[#f7f8f8] py-4 px-8">J3</button>
-                    <button class="rounded-lg bg-[#f7f8f8] py-4 px-8">J4</button>
+                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">J1</button>
+                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">J2</button>
+                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">J3</button>
+                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">J4</button>
                 </div>
                 <div class="w-[50%] border-dashed border-l-4 border-[#0307124d] px-8">
                     <h3 class="font-semibold text-2xl pb-6 border-dashed border-b-2 border-[#03071233]">Select Your Seat
@@ -309,8 +309,9 @@
                             <p class="font-semibold">Email ID</p>
                             <input class="w-full p-6 border border-[#0307121a] text-[#03071266] rounded-xl" type="email"
                                 name="" placeholder="Enter your email id" id=""><br>
-                            <input class="bg-[#1dd100] p-6 -mt-4 rounded-xl w-full text-white font-semibold text-2xl"
-                                type="submit" value="Next">
+                            <button onclick="bookingConfirm()"
+                                class="bg-[#1dd100] p-6 -mt-4 rounded-xl w-full text-white font-semibold text-2xl">Next
+                            </button>
                         </form>
                         <div class="flex justify-around underline mt-6 text-[#03071299]">
                             <a href="#">Terms and Conditions</a>
@@ -323,6 +324,17 @@
         <!-- seat sellection part -->
         <div>
 
+        </div>
+    </section>
+    <!-- Ticket Confirm Section -->
+    <section id="confirmation" class="px-36 bg-[#f7f8f8] hidden">
+        <div class="flex flex-col items-center gap-8 p-40 bg-white rounded-3xl">
+            <img src="images/success.png">
+            <h4 class="text-[#27ae60] font-bold text-2xl">SUCCESS</h4>
+            <p class="text-[#4a4a4a] font-medium text-2xl text-center">Thank you for Booking Our Bus Seats.
+                We are working hard to find the best service and deals for you. <br>
+                <span class="font-normal">Shortly you will find a confirmation in your email.</span></p>
+            <button class="text-white bg-[#27ae60] font-bold py-5 px-16 rounded-full">Continue</button>
         </div>
     </section>
     <!-- footer section -->
