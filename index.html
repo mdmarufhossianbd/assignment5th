@@ -188,10 +188,11 @@
             </div>
         </div>
         <!-- seat section -->
-        <div class="mx-36 bg-white mt-7 p-8 rounded-3xl">
+        <div id="seat_planing" class="mx-36 bg-white mt-7 p-8 rounded-3xl">
             <div class="flex">
-                <div class="grid grid-cols-5 gap-10 pl-4 w-[60%] pr-8">
-                    <div class="col-span-5">
+                <!-- Bus Seat Plan -->
+                <div class="grid grid-cols-11 gap-10 pl-4 w-[60%] pr-8">
+                    <div class="col-start-1 col-end-12">
                         <h3 class="font-semibold text-2xl mb-6">Select Your Seat</h3>
                         <div class="flex justify-between py-5 border-dashed border-y-2 border-[#03071233]">
                             <div class="flex font-medium text-lg text-[#03071280]">
@@ -204,98 +205,160 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-end-6 rounded-lg bg-[#f7f8f8] py-4 px-8"><img src="images/stearing.png">
+                    <div class="col-start-10 col-end-12 rounded-lg bg-[#f7f8f8] py-4 px-10">
+                        <img src="images/stearing.png">
                     </div>
-                    <p class="py-4 pl-6">A</p>
-                    <button onclick="set()" id="a1" class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">A1</button>
-                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">A2</button>
-                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">A3</button>
-                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">A4</button>
-                    <p class="py-4 pl-6">B</p>
-                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">B1</button>
-                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">B2</button>
-                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">B3</button>
-                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">B4</button>
-                    <p class="py-4 pl-6">C</p>
-                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">CA</button>
-                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">C2</button>
-                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">C3</button>
-                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">C4</button>
-                    <p class="py-4 pl-6">D</p>
-                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">D1</button>
-                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">D2</button>
-                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">D3</button>
-                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">D4</button>
-                    <p class="py-4 pl-6">E</p>
-                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">E</button>
-                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">E2</button>
-                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">E3</button>
-                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">E4</button>
-                    <p class="py-4 pl-6">F</p>
-                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">F1</button>
-                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">F2</button>
-                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">F3</button>
-                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">F4</button>
-                    <p class="py-4 pl-6">G</p>
-                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">G1</button>
-                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">G2</button>
-                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">G3</button>
-                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">G4</button>
-                    <p class="py-4 pl-6">H</p>
-                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">H1</button>
-                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">H2</button>
-                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">H3</button>
-                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">H4</button>
-                    <p class="py-4 pl-6">I</p>
-                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">I1</button>
-                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">I2</button>
-                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">I3</button>
-                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">I4</button>
-                    <p class="py-4 pl-6">J</p>
-                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">J1</button>
-                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">J2</button>
-                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">J3</button>
-                    <button class="seat-button rounded-lg bg-[#f7f8f8] py-4 px-8">J4</button>
+                    <p class="py-4 pl-2 col-start-1 col-end-1">A</p>
+                    <button id="seat_A1"
+                        class="seat-button col-start-2 col-end-4 rounded-lg bg-[#f7f8f8] py-4 px-8">A1</button>
+                    <button id="seat_A2"
+                        class="seat-button col-start-4 col-end-6 rounded-lg bg-[#f7f8f8] py-4 px-8">A2</button>
+                    <p class="col-start-6 col-end-8"></p>
+                    <button id="seat_A3"
+                        class="seat-button col-start-8 col-end-10 rounded-lg bg-[#f7f8f8] py-4 px-8">A3</button>
+                    <button id="seat_A4"
+                        class="seat-button col-start-10 col-end-12 rounded-lg bg-[#f7f8f8] py-4 px-8">A4</button>
+                    <p class="py-4 pl-2 col-start-1 col-end-1">B</p>
+                    <button id="seat_B1"
+                        class="seat-button col-start-2 col-end-4 rounded-lg bg-[#f7f8f8] py-4 px-8">B1</button>
+                    <button id="seat_B2"
+                        class="seat-button col-start-4 col-end-6 rounded-lg bg-[#f7f8f8] py-4 px-8">B2</button>
+                    <p class="col-start-6 col-end-8"></p>
+                    <button id="seat_B3"
+                        class="seat-button col-start-8 col-end-10 rounded-lg bg-[#f7f8f8] py-4 px-8">B3</button>
+                    <button id="seat_B4"
+                        class="seat-button col-start-10 col-end-12 rounded-lg bg-[#f7f8f8] py-4 px-8">B4</button>
+                    <p class="py-4 pl-2 col-start-1 col-end-1">C</p>
+                    <button id="seat_C1"
+                        class="seat-button col-start-2 col-end-4  rounded-lg bg-[#f7f8f8] py-4 px-8">C1</button>
+                    <button id="seat_C2"
+                        class="seat-button col-start-4 col-end-6 rounded-lg bg-[#f7f8f8] py-4 px-8">C2</button>
+                    <p class="col-start-6 col-end-8"></p>
+                    <button id="seat_C3"
+                        class="seat-button col-start-8 col-end-10 rounded-lg bg-[#f7f8f8] py-4 px-8">C3</button>
+                    <button id="seat_C4"
+                        class="seat-button col-start-10 col-end-12 rounded-lg bg-[#f7f8f8] py-4 px-8">C4</button>
+                    <p class="py-4 pl-2 col-start-1 col-end-1">D</p>
+                    <button id="seat_D1"
+                        class="seat-button col-start-2 col-end-4 rounded-lg bg-[#f7f8f8] py-4 px-8">D1</button>
+                    <button id="seat_D2"
+                        class="seat-button col-start-4 col-end-6 rounded-lg bg-[#f7f8f8] py-4 px-8">D2</button>
+                    <p class="col-start-6 col-end-8"></p>
+                    <button id="seat_D3"
+                        class="seat-button col-start-8 col-end-10 rounded-lg bg-[#f7f8f8] py-4 px-8">D3</button>
+                    <button id="seat_D4"
+                        class="seat-button col-start-10 col-end-12 rounded-lg bg-[#f7f8f8] py-4 px-8">D4</button>
+                    <p class="py-4 pl-2 col-start-1 col-end-1">E</p>
+                    <button id="seat_E1"
+                        class="seat-button col-start-2 col-end-4 rounded-lg bg-[#f7f8f8] py-4 px-8">E1</button>
+                    <button id="seat_E2"
+                        class="seat-button col-start-4 col-end-6 rounded-lg bg-[#f7f8f8] py-4 px-8">E2</button>
+                    <p class="col-start-6 col-end-8"></p>
+                    <button id="seat_E3"
+                        class="seat-button col-start-8 col-end-10 rounded-lg bg-[#f7f8f8] py-4 px-8">E3</button>
+                    <button id="seat_E4"
+                        class="seat-button col-start-10 col-end-12 rounded-lg bg-[#f7f8f8] py-4 px-8">E4</button>
+                    <p class="py-4 pl-2 col-start-1 col-end-1">F</p>
+                    <button id="seat_F1"
+                        class="seat-button col-start-2 col-end-4 rounded-lg bg-[#f7f8f8] py-4 px-8">F1</button>
+                    <button id="seat_F2"
+                        class="seat-button col-start-4 col-end-6 rounded-lg bg-[#f7f8f8] py-4 px-8">F2</button>
+                    <p class="col-start-6 col-end-8"></p>
+                    <button id="seat_F3"
+                        class="seat-button col-start-8 col-end-10 rounded-lg bg-[#f7f8f8] py-4 px-8">F3</button>
+                    <button id="seat_F4"
+                        class="seat-button col-start-10 col-end-12 rounded-lg bg-[#f7f8f8] py-4 px-8">F4</button>
+                    <p class="py-4 pl-2 col-start-1 col-end-1">G</p>
+                    <button id="seat_G1"
+                        class="seat-button col-start-2 col-end-4 rounded-lg bg-[#f7f8f8] py-4 px-8">G1</button>
+                    <button id="seat_G2"
+                        class="seat-button col-start-4 col-end-6 rounded-lg bg-[#f7f8f8] py-4 px-8">G2</button>
+                    <p class="col-start-6 col-end-8"></p>
+                    <button id="seat_G3"
+                        class="seat-button col-start-8 col-end-10 rounded-lg bg-[#f7f8f8] py-4 px-8">G3</button>
+                    <button id="seat_G4"
+                        class="seat-button col-start-10 col-end-12 rounded-lg bg-[#f7f8f8] py-4 px-8">G4</button>
+                    <p class="py-4 pl-2 col-start-1 col-end-1">H</p>
+                    <button id="seat_H1"
+                        class="seat-button col-start-2 col-end-4 rounded-lg bg-[#f7f8f8] py-4 px-8">H1</button>
+                    <button id="seat_H2"
+                        class="seat-button col-start-4 col-end-6 rounded-lg bg-[#f7f8f8] py-4 px-8">H2</button>
+                    <p class="col-start-6 col-end-8"></p>
+                    <button id="seat_H3"
+                        class="seat-button col-start-8 col-end-10 rounded-lg bg-[#f7f8f8] py-4 px-8">H3</button>
+                    <button id="seat_H4"
+                        class="seat-button col-start-10 col-end-12 rounded-lg bg-[#f7f8f8] py-4 px-8">H4</button>
+                    <p class="py-4 pl-2 col-start-1 col-end-1">I</p>
+                    <button id="seat_I1"
+                        class="seat-button col-start-2 col-end-4 rounded-lg bg-[#f7f8f8] py-4 px-8">I1</button>
+                    <button id="seat_I2"
+                        class="seat-button col-start-4 col-end-6 rounded-lg bg-[#f7f8f8] py-4 px-8">I2</button>
+                    <p class="col-start-6 col-end-8"></p>
+                    <button id="seat_I3"
+                        class="seat-button col-start-8 col-end-10 rounded-lg bg-[#f7f8f8] py-4 px-8">I3</button>
+                    <button id="seat_I4"
+                        class="seat-button col-start-10 col-end-12 rounded-lg bg-[#f7f8f8] py-4 px-8">I4</button>
+                    <p class="py-4 pl-2 col-start-1 col-end-1">J</p>
+                    <button id="seat_J1"
+                        class="seat-button col-start-2 col-end-4 rounded-lg bg-[#f7f8f8] py-4 px-8">J1</button>
+                    <button id="seat_J2"
+                        class="seat-button col-start-4 col-end-6 rounded-lg bg-[#f7f8f8] py-4 px-8">J2</button>
+                    <p class="col-start-6 col-end-8"></p>
+                    <button id="seat_J3"
+                        class="seat-button col-start-8 col-end-10 rounded-lg bg-[#f7f8f8] py-4 px-8">J3</button>
+                    <button id="seat_J4"
+                        class="seat-button col-start-10 col-end-12 rounded-lg bg-[#f7f8f8] py-4 px-8">J4</button>
                 </div>
                 <div class="w-[50%] border-dashed border-l-4 border-[#0307124d] px-8">
                     <h3 class="font-semibold text-2xl pb-6 border-dashed border-b-2 border-[#03071233]">Select Your Seat
                     </h3>
+
+                    <!-- Booking ticket Display -->
                     <div class="bg-[#f7f8f8] p-8 my-6 rounded-xl">
-                        <table class="w-full">
+                        <table id="seatTable" class="w-full">
                             <tr class="text-left">
-                                <th>
-                                    Seat <span class="bg-[#1dd100] text-white px-2 rounded-xl">2</span>
-                                </th>
-                                <th>
-                                    Class
-                                </th>
-                                <th class="text-right">
-                                    Price
-                                </th>
+                                <th>Seat <span id="selectedSeats"
+                                        class="bg-[#1dd100] text-white px-2 rounded-xl">0</span></th>
+                                <th>Class</th>
+                                <th class="text-right">Price</th>
                             </tr>
                             <tr>
-                                <td class="py-2">C1</td>
-                                <td>Economoy</td>
-                                <td class="text-right">550</td>
+                                <td id="seat_in_invoice_1" class="py-2"></td>
+                                <td id="seat_class_1"></td>
+                                <td id="ticket_price_1" class="text-right"></td>
                             </tr>
                             <tr>
-                                <td class="py-2">C2</td>
-                                <td>Economoy</td>
-                                <td class="text-right">550</td>
+                                <td id="seat_in_invoice_2" class="py-2"></td>
+                                <td id="seat_class_2"></td>
+                                <td id="ticket_price_2" class="text-right"></td>
+                            </tr>
+                            <tr>
+                                <td id="seat_in_invoice_3" class="py-2"></td>
+                                <td id="seat_class_3"></td>
+                                <td id="ticket_price_3" class="text-right"></td>
+                            </tr>
+                            <tr>
+                                <td id="seat_in_invoice_4" class="py-2"></td>
+                                <td id="seat_class_4"></td>
+                                <td id="ticket_price_4" class="text-right"></td>
                             </tr>
                             <tr>
                                 <td class="font-medium">Total Price</td>
                                 <td></td>
-                                <td class="font-medium text-right">1100</td>
+                                <td id="totalPrice" class="font-medium text-right">0</td>
                             </tr>
                         </table>
-                        <div class="bg-white rounded-xl w-[90%] text-center my-3">
-                            <input class="p-6 w-[70%]" type="text" placeholder="Have any copupon?" name="copupon" id="">
-                            <input class="bg-[#1dd100] text-white py-3 px-5 rounded-lg" type="submit" value="Apply">
+                        <div>
+                            <p id="discount_price" class="text-right"></p>
+                        </div>
+                        <div id="couponSection" class="bg-white rounded-xl w-[90%] text-center my-3">
+                            <input id="couponInput" class="p-6 w-[70%]" type="text" placeholder="Have any coupon?"
+                                name="coupon">
+                            <button id="applyCoupon" class="bg-[#1dd100] text-white py-3 px-5 rounded-lg">Apply</button>
                         </div>
                         <div class="flex justify-between">
-                            <p class="font-medium">Grant Total</p>
-                            <p class="font-medium">1100</p>
+                            <p class="font-medium">Grand Total</p>
+                            <p id="grandTotal" class="font-medium">0</p>
                         </div>
                     </div>
                     <div class="w-full">
@@ -321,20 +384,17 @@
                 </div>
             </div>
         </div>
-        <!-- seat sellection part -->
-        <div>
-
-        </div>
     </section>
     <!-- Ticket Confirm Section -->
-    <section id="confirmation" class="px-36 bg-[#f7f8f8] hidden">
+    <section id="confirmation" class="px-36 py-10 bg-[#f7f8f8] hidden">
         <div class="flex flex-col items-center gap-8 p-40 bg-white rounded-3xl">
             <img src="images/success.png">
             <h4 class="text-[#27ae60] font-bold text-2xl">SUCCESS</h4>
             <p class="text-[#4a4a4a] font-medium text-2xl text-center">Thank you for Booking Our Bus Seats.
                 We are working hard to find the best service and deals for you. <br>
                 <span class="font-normal">Shortly you will find a confirmation in your email.</span></p>
-            <button class="text-white bg-[#27ae60] font-bold py-5 px-16 rounded-full">Continue</button>
+            <button onclick="continueBuyTickts()"
+                class="text-white bg-[#27ae60] font-bold py-5 px-16 rounded-full">Continue</button>
         </div>
     </section>
     <!-- footer section -->
