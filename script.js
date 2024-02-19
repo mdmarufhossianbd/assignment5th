@@ -1,7 +1,7 @@
 let availableSeats = 40;
 let numSeats = 0;
-const buttons = document.getElementsByClassName('seat-button');
-const totalSeats = document.getElementById('totalSeats');
+const buttons = document.getElementsByClassName('seat_button');
+const totalSeats = document.getElementById('total_seats');
 
 for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', function (event) {
@@ -9,40 +9,45 @@ for (let i = 0; i < buttons.length; i++) {
     });
 }
 
+// button color and seat left function
+
 function toggleSeat(button) {
     if (button.classList.contains('selected')) {
         numSeats--;
         availableSeats++;
         button.classList.remove('selected');
-        button.style.backgroundColor = "#f7f8f8"; // Reset background color when deselected
+        button.style.backgroundColor = "#f7f8f8";
     } else {
         if (numSeats < 4 && availableSeats > 0) {
             numSeats++;
             availableSeats--;
             button.classList.add('selected');
-            button.style.backgroundColor = "#1dd100"; // Set background color when selected
+            button.style.backgroundColor = "#1dd100";
         }
     }
     totalSeats.textContent = `Seats left: ${availableSeats}`;
 };
 
-let selectedSeats = [];
-const seatPrice = 550; // Price per seat
-const applyCouponBtn = document.getElementById('applyCoupon');
-const couponInput = document.getElementById('couponInput');
-const selectedSeatsDisplay = document.getElementById('selectedSeats');
-const totalPriceDisplay = document.getElementById('totalPrice');
-const grandTotalDisplay = document.getElementById('grandTotal');
-const discountPriceDisplay = document.getElementById('discount_price');
-const couponSection = document.getElementById('couponSection');
+// Seat Booking Function
 
-// Event listener for applying coupon
+let selectedSeats = [];
+const seatPrice = 550;
+const applyCouponBtn = document.getElementById('apply_coupon');
+const couponInput = document.getElementById('coupon_input');
+const selectedSeatsDisplay = document.getElementById('selected_seats');
+const totalPriceDisplay = document.getElementById('total_price');
+const grandTotalDisplay = document.getElementById('grand_total');
+const discountPriceDisplay = document.getElementById('discount_price');
+const couponSection = document.getElementById('coupon_section');
+
 applyCouponBtn.addEventListener('click', applyCoupon);
+
+// discount section
 
 function applyCoupon() {
     const couponCode = couponInput.value;
     if (couponCode === 'NEW15' && selectedSeats.length === 4) {
-        // Apply coupon logic for NEW15 (15% discount)
+        // Apply coupon for NEW15 (15% discount)
         const totalPrice = selectedSeats.length * seatPrice;
         const discount = totalPrice * 0.15;
         const finalPrice = totalPrice - discount;
@@ -64,10 +69,11 @@ function applyCoupon() {
         alert('Invalid coupon code or condition not met.');
     }
 }
-
+// Seat selection counting
 function updateSeatSelection(seatName) {
-    if (selectedSeats.includes(seatName)) {
-        selectedSeats = selectedSeats.filter(seat => seat !== seatName);
+    const index = selectedSeats.indexOf(seatName);
+    if (index !== -1) {
+        selectedSeats.splice(index, 1);
     } else {
         if (selectedSeats.length < 4) {
             selectedSeats.push(seatName);
@@ -78,18 +84,19 @@ function updateSeatSelection(seatName) {
     updateSeatDisplay();
     updateTotalPrice();
 }
-// Seat Display Part
+
 function updateSeatDisplay() {
-    selectedSeatsDisplay.textContent = selectedSeats.length;
-    selectedSeats.forEach((seat, index) => {
+    selectedSeatsDisplay.innerText = selectedSeats.length;
+    for (let index = 0; index < selectedSeats.length; index++) {
         const seatIndex = index + 1;
+        const seat = selectedSeats[index];
         const seatElement = document.getElementById(`seat_in_invoice_${seatIndex}`);
         const seatClassElement = document.getElementById(`seat_class_${seatIndex}`);
         const ticketPriceElement = document.getElementById(`ticket_price_${seatIndex}`);
-        seatElement.textContent = seat;
-        seatClassElement.textContent = selectedSeats.length > index ? "Economy" : "";
-        ticketPriceElement.textContent = selectedSeats.length > index ? seatPrice.toFixed(2) : "";
-    });
+        seatElement.innerText = seat;
+        seatClassElement.innerText = "Economy";
+        ticketPriceElement.innerText = seatPrice.toFixed(2);
+    }
 }
 
 function updateTotalPrice() {
@@ -97,11 +104,10 @@ function updateTotalPrice() {
     grandTotalDisplay.textContent = (selectedSeats.length * seatPrice).toFixed(2);
 }
 
-// Adding event listener to seat selection using traditional for loop
-const seats = document.querySelectorAll('.seat-button');
+const seats = document.querySelectorAll('.seat_button');
 for (let i = 0; i < seats.length; i++) {
     seats[i].addEventListener('click', () => {
-        const seatName = seats[i].id.replace('seat_', ''); // Extracting seat name from ID
+        const seatName = seats[i].id.replace('seat_', '');
         updateSeatSelection(seatName);
     });
 }
